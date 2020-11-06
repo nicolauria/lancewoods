@@ -1,7 +1,7 @@
 development:
   clients:
     default:
-      uri: mongodb+srv://nicolauria:ykL7lhXkCs5r0eXW@cluster0.xowqb.mongodb.net/<dbname>?retryWrites=true&w=majority
+      uri: mongodb+srv://nicolauria:2solG6EqWIh6Y0nE@cluster0.xowqb.mongodb.net/<dbname>?retryWrites=true&w=majority
       options:
         server_selection_timeout: 5
         # Note that all options listed below are Ruby driver client options (the mongo gem).
@@ -113,7 +113,7 @@ development:
 
     # Raise an error when performing a #find and the document is not found.
     # (default: true)
-    # raise_not_found_error: true
+    raise_not_found_error: true
 
     # Raise an error when defining a scope with the same name as an
     # existing method. (default: false)
