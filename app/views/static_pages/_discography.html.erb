@@ -2,108 +2,25 @@
     <div class="container">
         <h2 class="wow fadeScale">Discography</h2>
         <div class="row row-30">
-        <div class="col-sm-6 col-lg-4">
-            <!-- Thumbnail Classic-->
-            <article class="thumbnail-classic">
-            <div class="thumbnail-classic-figure"><img src="images/home-1-370x315.jpg" alt="" width="370" height="315"/>
-            </div>
-            <div class="thumbnail-classic-caption">
-                <div>
-                <h5 class="thumbnail-classic-title"><a href="#">Basixx EP</a></h5>
-                <div class="thumbnail-classic-price">2020</div>
-                <div class="thumbnail-classic-button-wrap">
-                    <div class="thumbnail-classic-button"><a class="button button-white" href="#"><span class="mdi mdi-google-play"></span></a></div>
-                    <div class="thumbnail-classic-button"><a class="button button-white" href="#"><span class="mdi mdi-apple"></span></a></div>
+            <% discography.each do |disc| %>
+                <div class="col-sm-6 col-lg-4">
+                    <!-- Thumbnail Classic-->
+                    <article class="thumbnail-classic">
+                    <div class="thumbnail-classic-figure"><img src="<%= disc.image %>" alt="" width="370" height="315"/>
+                    </div>
+                    <div class="thumbnail-classic-caption">
+                        <div>
+                        <h5 class="thumbnail-classic-title"><a href="#"><%= disc.name %></a></h5>
+                        <div class="thumbnail-classic-price"><%= disc.year %></div>
+                        <div class="thumbnail-classic-button-wrap">
+                            <div class="thumbnail-classic-button"><a class="button button-white" href="<%= disc.googlePlay %>"><span class="mdi mdi-google-play"></span></a></div>
+                            <div class="thumbnail-classic-button"><a class="button button-white" href="<%= disc.itunes %>"><span class="mdi mdi-apple"></span></a></div>
+                        </div>
+                        </div>
+                    </div>
+                    </article>
                 </div>
-                </div>
-            </div>
-            </article>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-            <!-- Thumbnail Classic-->
-            <article class="thumbnail-classic">
-            <div class="thumbnail-classic-figure"><img src="images/home-2-370x315.jpg" alt="" width="370" height="315"/>
-            </div>
-            <div class="thumbnail-classic-caption">
-                <div>
-                <h5 class="thumbnail-classic-title"><a href="#">Bandico Square</a></h5>
-                <div class="thumbnail-classic-price">2020</div>
-                <div class="thumbnail-classic-button-wrap">
-                    <div class="thumbnail-classic-button"><a class="button button-white" href="#"><span class="mdi mdi-google-play"></span></a></div>
-                    <div class="thumbnail-classic-button"><a class="button button-white" href="#"><span class="mdi mdi-apple"></span></a></div>
-                </div>
-                </div>
-            </div>
-            </article>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-            <!-- Thumbnail Classic-->
-            <article class="thumbnail-classic">
-            <div class="thumbnail-classic-figure"><img src="images/home-3-370x315.jpg" alt="" width="370" height="315"/>
-            </div>
-            <div class="thumbnail-classic-caption">
-                <div>
-                <h5 class="thumbnail-classic-title"><a href="#">just a Beginning</a></h5>
-                <div class="thumbnail-classic-price">2018</div>
-                <div class="thumbnail-classic-button-wrap">
-                    <div class="thumbnail-classic-button"><a class="button button-white" href="#"><span class="mdi mdi-google-play"></span></a></div>
-                    <div class="thumbnail-classic-button"><a class="button button-white" href="#"><span class="mdi mdi-apple"></span></a></div>
-                </div>
-                </div>
-            </div>
-            </article>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-            <!-- Thumbnail Classic-->
-            <article class="thumbnail-classic">
-            <div class="thumbnail-classic-figure"><img src="images/home-4-370x315.jpg" alt="" width="370" height="315"/>
-            </div>
-            <div class="thumbnail-classic-caption">
-                <div>
-                <h5 class="thumbnail-classic-title"><a href="#">sounds of the Streets</a></h5>
-                <div class="thumbnail-classic-price">2017</div>
-                <div class="thumbnail-classic-button-wrap">
-                    <div class="thumbnail-classic-button"><a class="button button-white" href="#"><span class="mdi mdi-google-play"></span></a></div>
-                    <div class="thumbnail-classic-button"><a class="button button-white" href="#"><span class="mdi mdi-apple"></span></a></div>
-                </div>
-                </div>
-            </div>
-            </article>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-            <!-- Thumbnail Classic-->
-            <article class="thumbnail-classic">
-            <div class="thumbnail-classic-figure"><img src="images/home-5-370x315.jpg" alt="" width="370" height="315"/>
-            </div>
-            <div class="thumbnail-classic-caption">
-                <div>
-                <h5 class="thumbnail-classic-title"><a href="#">Stay Wild</a></h5>
-                <div class="thumbnail-classic-price">2016</div>
-                <div class="thumbnail-classic-button-wrap">
-                    <div class="thumbnail-classic-button"><a class="button button-white" href="#"><span class="mdi mdi-google-play"></span></a></div>
-                    <div class="thumbnail-classic-button"><a class="button button-white" href="#"><span class="mdi mdi-apple"></span></a></div>
-                </div>
-                </div>
-            </div>
-            </article>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-            <!-- Thumbnail Classic-->
-            <article class="thumbnail-classic">
-            <div class="thumbnail-classic-figure"><img src="images/home-6-370x315.jpg" alt="" width="370" height="315"/>
-            </div>
-            <div class="thumbnail-classic-caption">
-                <div>
-                <h5 class="thumbnail-classic-title"><a href="#">M.A.D</a></h5>
-                <div class="thumbnail-classic-price">2015</div>
-                <div class="thumbnail-classic-button-wrap">
-                    <div class="thumbnail-classic-button"><a class="button button-white" href="#"><span class="mdi mdi-google-play"></span></a></div>
-                    <div class="thumbnail-classic-button"><a class="button button-white" href="#"><span class="mdi mdi-apple"></span></a></div>
-                </div>
-                </div>
-            </div>
-            </article>
-        </div>
+            <% end %>
         </div>
     </div>
 </section>

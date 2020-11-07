@@ -1,3 +1,7 @@
+<% content_for :javascript_includes do %>
+    <% javascript_include_tag "/javascripts/eb_widgets.js" %>
+<% end %>
+
 <%=  render 'preloader' %>
 <div class="page">
     <!-- Header-->
@@ -13,7 +17,7 @@
     <%= render 'about_us' %>
 
     <!-- Discography -->
-    <%= render 'discography' %>
+    <%= render 'discography', discography: @discography %>
 
     <!-- Upcoming Event -->
     <%= render 'upcoming_event' %>

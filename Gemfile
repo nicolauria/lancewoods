@@ -22,6 +22,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Use MongoDB Atlas
 gem 'mongoid', '~> 7.0.5'
 
+# Eventbrite SDK
+gem 'eventbrite'
+gem 'eventbrite_sdk'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
