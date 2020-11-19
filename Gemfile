@@ -27,10 +27,10 @@ gem 'mongoid', '~> 7.0.5'
 #   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 # end
 
-platform :mswin, :mingw, :x64_mingw do
-  gem 'tzinfo-data'
-  gem 'byebug', platforms: %i[mri mingw x64_mingw], group: :development
-end
+# platform :mswin, :mingw, :x64_mingw do
+#   gem 'tzinfo-data'
+#   gem 'byebug', platforms: %i[mri mingw x64_mingw], group: :development
+# end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
