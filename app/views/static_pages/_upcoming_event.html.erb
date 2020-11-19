@@ -5,11 +5,11 @@
         </div>
         <div class="col-sm-6 col-md-5">
             <article class="box-info-beryl">
-            <h2 class="box-info-beryl-title wow fadeInRight">upcoming event</h2>
+            <h2 class="box-info-beryl-title wow fadeInRight"><%= event.name %></h2>
             <div class="heading-2 text-primary box-info-beryl-time wow fadeInRight" data-wow-delay=".1s">
-                <time datetime="2020-05-05">jun 17</time>
+                <time datetime="2020-05-05"><%= event.date %></time>
             </div>
-            <p class="box-info-beryl-text wow fadeInRight" data-wow-delay=".2s">Join the presentation of Bandico’s latest release at Omegaforce Club in Los Angeles. Buy tickets now to listen to new & famous hits by Bandico performed live.</p><a class="button button-white button-zakaria wow fadeInUp" href="#">buy tickets</a>
+            <p class="box-info-beryl-text wow fadeInRight" data-wow-delay=".2s"><%= event.description %></p><a class="button button-white button-zakaria wow fadeInUp" href="<%= event.event_url">buy tickets</a>
             </article>
         </div>
         </div>

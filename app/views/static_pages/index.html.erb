@@ -20,13 +20,13 @@
     <%= render 'discography', discography: @discography %>
 
     <!-- Upcoming Event -->
-    <%= render 'upcoming_event' %>
+    <%= render 'upcoming_event', event: @events.first %>
 
     <!-- Tour Gallery -->
     <%= render 'tour_gallery' %>
 
     <!-- Featured Events -->
-    <%= render 'featured_events' %>
+    <%= render 'featured_events', events: @events %>
 
     <!-- Newsletter -->
     <%= render 'newsletter' %>
@@ -35,7 +35,7 @@
     <%= render 'instagram' %>
 
     <!-- Merch -->
-    <%= render 'merch' %>
+    <%= render 'merch', products: @products %>
 
     <!-- Footer -->
     <%= render 'footer' %>

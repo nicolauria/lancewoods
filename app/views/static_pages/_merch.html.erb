@@ -2,74 +2,25 @@
     <div class="container">
         <h2 class="wow fadeScale">Exclusive Merch</h2>
         <div class="row row-lg row-30 row-lg-50">
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <!-- Product-->
-            <article class="product wow fadeInRight">
-            <div class="product-body">
-                <div class="product-figure"><img src="images/index-1-270x260.jpg" alt="" width="270" height="260"/>
+        <% products.each do |product| %>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <!-- Product-->
+                <article class="product wow fadeInRight">
+                <div class="product-body">
+                    <div class="product-figure"><img src="<%= product.image1 %>" alt="" width="270" height="260"/>
+                    </div>
+                    <h5 class="product-title"><a href="single-product.html"><%= product.name %></a></h5>
+                    <div class="product-price-wrap">
+                    <div class="product-price">$<%= product.price %>.00</div>
+                    </div>
                 </div>
-                <h5 class="product-title"><a href="single-product.html">Stay Wild men’s T-Shirt</a></h5>
-                <div class="product-price-wrap">
-                <div class="product-price">$18.00</div>
+                <div class="product-button-wrap">
+                    <div class="product-button"><a class="button button-gray-14 button-zakaria fl-bigmug-line-search74" href="single-product.html"></a></div>
+                    <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div>
                 </div>
+                </article>
             </div>
-            <div class="product-button-wrap">
-                <div class="product-button"><a class="button button-gray-14 button-zakaria fl-bigmug-line-search74" href="single-product.html"></a></div>
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div>
-            </div>
-            </article>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <!-- Product-->
-            <article class="product wow fadeInRight" data-wow-delay=".1s">
-            <div class="product-body">
-                <div class="product-figure"><img src="images/index-2-270x260.jpg" alt="" width="270" height="260"/>
-                </div>
-                <h5 class="product-title"><a href="single-product.html">Bandico Baseball Hat</a></h5>
-                <div class="product-price-wrap">
-                <div class="product-price">$23.00</div>
-                </div>
-            </div>
-            <div class="product-button-wrap">
-                <div class="product-button"><a class="button button-gray-14 button-zakaria fl-bigmug-line-search74" href="single-product.html"></a></div>
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div>
-            </div>
-            </article>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <!-- Product-->
-            <article class="product wow fadeInRight" data-wow-delay=".2s">
-            <div class="product-body">
-                <div class="product-figure"><img src="images/index-3-270x260.jpg" alt="" width="270" height="260"/>
-                </div>
-                <h5 class="product-title"><a href="single-product.html">Stay wild ladies T-Shirt</a></h5>
-                <div class="product-price-wrap">
-                <div class="product-price">$20.00</div>
-                </div>
-            </div>
-            <div class="product-button-wrap">
-                <div class="product-button"><a class="button button-gray-14 button-zakaria fl-bigmug-line-search74" href="single-product.html"></a></div>
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div>
-            </div>
-            </article>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <!-- Product-->
-            <article class="product wow fadeInRight" data-wow-delay=".3s">
-            <div class="product-body">
-                <div class="product-figure"><img src="images/index-4-270x260.jpg" alt="" width="270" height="260"/>
-                </div>
-                <h5 class="product-title"><a href="single-product.html">M.A.D Classic T-Shirt</a></h5>
-                <div class="product-price-wrap">
-                <div class="product-price">$16.00</div>
-                </div>
-            </div>
-            <div class="product-button-wrap">
-                <div class="product-button"><a class="button button-gray-14 button-zakaria fl-bigmug-line-search74" href="single-product.html"></a></div>
-                <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div>
-            </div>
-            </article>
-        </div>
+        <% end %>
         <div class="col-12"><a class="link-classic link-primary wow fadeInUp" href="grid-shop.html">visit the shop</a></div>
         </div>
     </div>
