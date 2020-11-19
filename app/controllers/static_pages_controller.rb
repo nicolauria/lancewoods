@@ -6,4 +6,9 @@ class StaticPagesController < ApplicationController
 
         render :index
     end
+
+    def newsletter
+        MyMailer.send_email(name: params[:name], phone: params[:phone], email: params[:email], message: params[:message]).deliver
+        render plain: 'MF000'
+    end
 end
