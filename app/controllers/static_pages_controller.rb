@@ -19,4 +19,10 @@ class StaticPagesController < ApplicationController
 
         render :product
     end
+
+    def add_to_cart
+        p params
+
+        # render :cart
+    end
 end

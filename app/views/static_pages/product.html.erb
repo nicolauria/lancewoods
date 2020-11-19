@@ -1,20 +1,24 @@
 <% content_for :title, @product.name %>
 
+<% content_for :javascript_includes do %>
+  <% javascript_include_tag "/javascripts/cart.js" %>
+<% end %>
+
 <%=  render 'preloader' %>
 <div class="page">
     <!-- Header-->
     <%= render 'header' %>
 
-      <!-- Parallax Header -->
-      <%= render 'parallax_header', background_image: 'images/bg-blog.jpg', title: @product.name %>
-      
-      <!-- Product Info -->
-      <%= render 'product_info', product: @product %>
+    <!-- Parallax Header -->
+    <%= render 'parallax_header', background_image: 'images/bg-blog.jpg', title: @product.name %>
+    
+    <!-- Product Info -->
+    <%= render 'product_info', product: @product %>
 
-      <!-- Related Products -->
-      <%= render 'related_products', product_id: @product._id, products: @products %>
+    <!-- Related Products -->
+    <%= render 'related_products', product_id: @product._id, products: @products %>
 
-      <!-- Footer -->
-      <%= render 'footer' %>
+    <!-- Footer -->
+    <%= render 'footer' %>
 </div>
 <div class="snackbars" id="form-output-global"></div>
