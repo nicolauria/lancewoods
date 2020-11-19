@@ -9,6 +9,14 @@ class StaticPagesController < ApplicationController
 
     def newsletter
         MyMailer.send_email(name: params[:name], phone: params[:phone], email: params[:email], message: params[:message]).deliver
+        
         render plain: 'MF000'
+    end
+
+    def product
+        @product = Product.find(params[:id])
+        @products = Product.all
+
+        render :product
     end
 end

@@ -1,0 +1,20 @@
+<% content_for :title, @product.name %>
+
+<%=  render 'preloader' %>
+<div class="page">
+    <!-- Header-->
+    <%= render 'header' %>
+
+      <!-- Parallax Header -->
+      <%= render 'parallax_header', background_image: 'images/bg-blog.jpg', title: @product.name %>
+      
+      <!-- Product Info -->
+      <%= render 'product_info', product: @product %>
+
+      <!-- Related Products -->
+      <%= render 'related_products', product_id: @product._id, products: @products %>
+
+      <!-- Footer -->
+      <%= render 'footer' %>
+</div>
+<div class="snackbars" id="form-output-global"></div>
