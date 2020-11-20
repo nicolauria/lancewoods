@@ -22,15 +22,15 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Use MongoDB Atlas
 gem 'mongoid', '~> 7.0.5'
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-end
-
-# platform :mswin, :mingw, :x64_mingw do
-#   gem 'tzinfo-data'
-#   gem 'byebug', platforms: %i[mri mingw x64_mingw], group: :development
+# group :development, :test do
+#   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+#   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 # end
+
+platform :mswin, :mingw, :x64_mingw do
+  gem 'tzinfo-data'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw], group: :development
+end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -38,4 +38,4 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
