@@ -1,6 +1,4 @@
 class StaticPagesController < ApplicationController
-    include CartUtil
-
     def index
         @discography = Discography.all
         @events = Event.all
@@ -23,41 +21,45 @@ class StaticPagesController < ApplicationController
     end
 
     def add_to_cart
-
         product = Product.find(params[:id])
         product['quantity'] = params[:quantity]
 
         # add to existing cart
         if cookies[:cart]
-            cart = Cart.find(cookies[:cart])
+            @cart = Cart.find(cookies[:cart])
 
             modified = false
 
             # check if product already in cart
-            cart.products.each_with_index do |prod, idx|
+            @cart.products.each_with_index do |prod, idx|
                 if params[:id] == prod['_id']
-                    cart.products[idx] = product.as_json
-                    cart.save
+                    @cart.products[idx] = product.as_json
+                    @cart.save
                     modified = true
                     break
                 end
             end
 
             if !modified
-                cart.products.push(product.as_json)
-                cart.save
+                @cart.products.push(product.as_json)
+                @cart.save
             end
 
         else
-            # add new cart
-            cart = Cart.new
-            cart.products = [product.as_json]
-            cart.save
+            # add to new cart
+            @cart = Cart.new
+            @cart.products = [product.as_json]
+            @cart.save
 
-            cookies[:cart] = cart._id
+            cookies[:cart] = @cart._id
         end
         
-        # render :cart
+        render :cart
     end
+
+    # def cart
+    #     @cart = Cart.find(cookies[:cart])
+    #     render :cart
+    # end
 end
 

@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   post 'newsletter', to: 'static_pages#newsletter'
   get 'product', to: 'static_pages#product'
   post 'add_to_cart', to: 'static_pages#add_to_cart'
+  get 'cart', to: 'static_pages#cart'
 end

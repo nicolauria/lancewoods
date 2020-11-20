@@ -1,17 +1,22 @@
-// document.querySelector('#add-to-cart').onclick = function(e) {
-//     e.preventDefault();
 
-//     const data = {
-//         productId: document.querySelector('#product-id').value,
-//         quantity: document.querySelector('#quantity').value
-//     }
+function populateCartTotal() {
+    let total = 0
+    $('.product-total').each(function() { total += $(this).data('total') })
+    $('#cart-total').html(`$${total}.00`)
+}
 
-//     fetch('http://localhost:3000/add_to_cart', {
-//         method: 'post',
-//         body: JSON.stringify(data)
-//     }).then(function(response) {
-//         return response.json();
-//     }).then(function(data) {
-//         console.log(data);
-//     });
-// }
+populateCartTotal()
+
+// handle product total update on quantity change
+$(document).on("click", ".stepper-arrow" , function(event) {
+    const tableRow = $(this).closest('tr')
+    
+    const productPrice = tableRow.find('.product-price').data('price')
+    const productQuantity = tableRow.find('.stepper-input').val()
+    const productTotal = tableRow.find('.product-total')
+    
+    productTotal.data('total', productQuantity * productPrice)
+    productTotal.html(`$${productQuantity * productPrice}.00`)
+
+    populateCartTotal()
+});
