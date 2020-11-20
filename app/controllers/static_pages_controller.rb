@@ -61,5 +61,12 @@ class StaticPagesController < ApplicationController
     #     @cart = Cart.find(cookies[:cart])
     #     render :cart
     # end
+
+    # update quantity of product in a cart
+    def update_quantity
+        cart = Cart.find(cookies[:cart])
+        cart.products[params[:idx].to_i]['quantity'] = params[:quantity]
+        cart.save
+    end
 end
 
