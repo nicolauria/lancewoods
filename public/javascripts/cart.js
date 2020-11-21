@@ -3,7 +3,7 @@
 function populateCartTotal() {
     let total = 0
     $('.product-total').each(function() { total += $(this).data('total') })
-    $('#cart-total').html(`$${total}.00`)
+    $('.cart-total').html(`$${total}.00`)
 }
 
 // populate cart total on page load

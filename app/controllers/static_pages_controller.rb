@@ -54,19 +54,25 @@ class StaticPagesController < ApplicationController
             cookies[:cart] = @cart._id
         end
         
-        render :cart
+        redirect_to :cart
     end
 
-    # def cart
-    #     @cart = Cart.find(cookies[:cart])
-    #     render :cart
-    # end
+    def cart
+        @cart = cookies[:cart] ? Cart.find(cookies[:cart]) : Cart.new
+        render :cart
+    end
 
     # update quantity of product in a cart
     def update_quantity
         cart = Cart.find(cookies[:cart])
         cart.products[params[:idx].to_i]['quantity'] = params[:quantity]
         cart.save
+    end
+
+    def checkout_page
+        @cart = Cart.find(cookies[:cart])
+        redirect_to root_url unless @cart
+        render :checkout
     end
 end
 

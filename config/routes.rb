@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   post 'add_to_cart', to: 'static_pages#add_to_cart'
   get 'cart', to: 'static_pages#cart'
   post 'update_quantity', to: 'static_pages#update_quantity'
+  get 'checkout_page', to: 'static_pages#checkout_page'
 end
