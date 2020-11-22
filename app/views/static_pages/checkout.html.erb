@@ -14,51 +14,53 @@
           <div class="row row-50 justify-content-center">
             <div class="col-md-10 col-lg-6">
               <h3 class="font-weight-medium">Billing Address</h3>
-              <form id="billing-address" class="rd-form rd-mailform form-checkout">
+              <form id="billing-address" class="rd-form rd-mailform form-checkout" method="post" action="<%= checkout_url %>">
+              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
                 <div class="row row-30">
                   <div class="col-sm-6">
                     <div class="form-wrap">
-                      <input class="form-input" id="checkout-first-name-1" type="text" name="name" data-constraints="@Required"/>
+                      <input value="test" class="form-input" id="checkout-first-name-1" type="text" name="ba_fname" data-constraints="@Required"/>
                       <label class="form-label" for="checkout-first-name-1">First Name</label>
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-wrap">
-                      <input class="form-input" id="checkout-last-name-1" type="text" name="name" data-constraints="@Required"/>
+                      <input value="test" class="form-input" id="checkout-last-name-1" type="text" name="ba_lname" data-constraints="@Required"/>
                       <label class="form-label" for="checkout-last-name-1">Last Name</label>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-wrap">
-                      <input class="form-input" id="checkout-company-1" type="text" name="name" data-constraints="@Required"/>
+                      <input value="test" class="form-input" id="checkout-company-1" type="text" name="ba_company"/>
                       <label class="form-label" for="checkout-company-1">Company</label>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-wrap">
-                      <input class="form-input" id="checkout-address-1" type="text" name="name" data-constraints="@Required"/>
+                      <input value="test" class="form-input" id="checkout-address-1" type="text" name="ba_address" data-constraints="@Required"/>
                       <label class="form-label" for="checkout-address-1">Address</label>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-wrap">
-                      <input class="form-input" id="checkout-city-1" type="text" name="name" data-constraints="@Required"/>
+                      <input value="test" class="form-input" id="checkout-city-1" type="text" name="ba_city" data-constraints="@Required"/>
                       <label class="form-label" for="checkout-city-1">City/Town</label>
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-wrap">
-                      <input class="form-input" id="checkout-email-1" type="email" name="email" data-constraints="@Email @Required"/>
+                      <input value="test" class="form-input" id="checkout-email-1" type="email" name="ba_email" data-constraints="@Email @Required"/>
                       <label class="form-label" for="checkout-email-1">E-Mail</label>
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-wrap">
-                      <input class="form-input" id="checkout-phone-1" type="text" name="phone" data-constraints="@Numeric"/>
+                      <input value="test" class="form-input" id="checkout-phone-1" type="text" name="ba_phone" data-constraints="@Numeric"/>
                       <label class="form-label" for="checkout-phone-1">Phone</label>
                     </div>
                   </div>
                 </div>
+                
                 <label class="checkbox-inline text-transform-capitalize">
                   <input id="billing-shipping-same" name="input-checkbox-1" value="checkbox-1" type="checkbox"/>My Billing Address and Shipping Address are the same
                 </label>
@@ -70,43 +72,43 @@
                 <div class="row row-30">
                   <div class="col-sm-6">
                     <div class="form-wrap">
-                      <input class="form-input" id="checkout-first-name-2" type="text" name="name" data-constraints="@Required"/>
+                      <input value="test" class="form-input" id="checkout-first-name-2" type="text" name="sa_fname" data-constraints="@Required"/>
                       <label class="form-label" for="checkout-first-name-2">First Name</label>
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-wrap">
-                      <input class="form-input" id="checkout-last-name-2" type="text" name="name" data-constraints="@Required"/>
+                      <input value="test" class="form-input" id="checkout-last-name-2" type="text" name="sa_lname" data-constraints="@Required"/>
                       <label class="form-label" for="checkout-last-name-2">Last Name</label>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-wrap">
-                      <input class="form-input" id="checkout-company-2" type="text" name="name" data-constraints="@Required"/>
+                      <input value="test" class="form-input" id="checkout-company-2" type="text" name="sa_company" />
                       <label class="form-label" for="checkout-company-2">Company</label>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-wrap">
-                      <input class="form-input" id="checkout-address-2" type="text" name="name" data-constraints="@Required"/>
+                      <input value="test" class="form-input" id="checkout-address-2" type="text" name="sa_address" data-constraints="@Required"/>
                       <label class="form-label" for="checkout-address-2">Address</label>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-wrap">
-                      <input class="form-input" id="checkout-city-2" type="text" name="name" data-constraints="@Required"/>
+                      <input value="test" class="form-input" id="checkout-city-2" type="text" name="sa_city" data-constraints="@Required"/>
                       <label class="form-label" for="checkout-city-2">City/Town</label>
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-wrap">
-                      <input class="form-input" id="checkout-email-2" type="email" name="email" data-constraints="@Email @Required"/>
+                      <input value="test" class="form-input" id="checkout-email-2" type="email" name="sa_email" data-constraints="@Email @Required"/>
                       <label class="form-label" for="checkout-email-2">E-Mail</label>
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-wrap">
-                      <input class="form-input" id="checkout-phone-2" type="text" name="phone" data-constraints="@Numeric"/>
+                      <input value="test" class="form-input" id="checkout-phone-2" type="text" name="sa_phone" data-constraints="@Numeric"/>
                       <label class="form-label" for="checkout-phone-2">Phone</label>
                     </div>
                   </div>
@@ -187,7 +189,10 @@
 </div>
 <div class="snackbars" id="form-output-global"></div>
 
-<% content_for :javascript_includes do %>
-    <% javascript_include_tag "/javascripts/cart.js", defer: true %>
-    <% javascript_include_tag "/javascripts/checkout.js", defer: true %>
+<% content_for :javascript_includes_1 do %>
+  <% javascript_include_tag "/javascripts/checkout.js", defer: true %>
+<% end %>
+
+<% content_for :javascript_includes_2 do %>
+  <% javascript_include_tag "/javascripts/cart.js", defer: true %>
 <% end %>

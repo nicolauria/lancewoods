@@ -74,5 +74,27 @@ class StaticPagesController < ApplicationController
         redirect_to root_url unless @cart
         render :checkout
     end
+
+    def checkout
+        @cart = Cart.find(cookies[:cart])
+
+        total = 0
+        @cart.products.each do |prod|
+            total += prod['price'].to_i * prod['quantity'].to_i
+        end
+
+        p total
+
+        # if params[:sa_address]
+        #     # calculate total
+        #     # create new order
+        #     # send email to buyer with order summary and confirmation number
+        #     order = Order.new
+        # else
+
+        # end
+
+        render :checkout
+    end
 end
 

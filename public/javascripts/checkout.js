@@ -1,14 +1,20 @@
+// purchase items submits ba and sa forms
 $('#purchase-items').on('click', function(event) {
     event.preventDefault()
-    
+
     if ($('#billing-shipping-same').is(':checked')) {
-        $('#billing-address').submit(function(response) {
-            console.log(response);
-        })
+        $('#billing-address')[0].submit()
     } else {
-        $('#billing-address').submit(function(event) {
-            console.log(event);
-        })
+        // append all sa inputs to ba form
+        $('#billing-address').append($('#checkout-first-name-2'))
+        $('#billing-address').append($('#checkout-last-name-2'))
+        $('#billing-address').append($('#checkout-company-2'))
+        $('#billing-address').append($('#checkout-address-2'))
+        $('#billing-address').append($('#checkout-city-2'))
+        $('#billing-address').append($('#checkout-email-2'))
+        $('#billing-address').append($('#checkout-phone-2'))
+
+        $('#billing-address')[0].submit()
     }
     
 })
