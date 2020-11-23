@@ -157,6 +157,15 @@
                 </div>
               </div>
               <% end %>
+              <form action="/charge" method="post" id="payment-form">
+                <div class="form-row">
+                  <label for="card-element">
+                    Credit or debit card
+                  </label>
+                  <div id="card-element" class="form-control"></div>
+                  <div id="card-errors" role="alert"></div>
+                </div>
+              </form>
               <a id="purchase-items" class="button button-lg button-primary button-zakaria" href="#">Purchase Items</a>  
             </div>
             <div class="col-md-10 col-lg-6">
@@ -188,6 +197,9 @@
     <%= render 'footer' %>
 </div>
 <div class="snackbars" id="form-output-global"></div>
+
+<script src="https://js.stripe.com/v3/" defer></script>
+<script src="/javascripts/stripe.js" defer></script>
 
 <% content_for :javascript_includes_1 do %>
   <% javascript_include_tag "/javascripts/checkout.js", defer: true %>

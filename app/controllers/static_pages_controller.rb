@@ -121,5 +121,16 @@ class StaticPagesController < ApplicationController
 
         redirect_to :checkout
     end
+
+    def blog
+        @posts = Blog.all
+        render :blog_grid
+    end
+
+    def blog_post
+        @post = Blog.find(params[:id])
+        @posts = Blog.all
+        render :blog_post
+    end
 end
 

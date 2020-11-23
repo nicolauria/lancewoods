@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   post 'checkout', to: 'static_pages#checkout'
   # for page refresh on cart page
   get 'checkout', to: 'static_pages#checkout_page'
+
+  get 'blog', to: 'static_pages#blog'
+  get 'blog_post', to: 'static_pages#blog_post'
 end
