@@ -13,6 +13,11 @@ class StaticPagesController < ApplicationController
         render plain: 'MF000'
     end
 
+    def shop
+        @products = Product.all
+        render :shop
+    end
+
     def product
         @product = Product.find(params[:id])
         @products = Product.all

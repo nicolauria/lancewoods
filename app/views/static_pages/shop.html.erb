@@ -1,4 +1,4 @@
-<% content_for :title, 'Blog' %>
+<% content_for :title, 'Shop' %>
 
 <%=  render 'preloader' %>
 <div class="page">
@@ -6,12 +6,14 @@
     <%= render 'header' %>
 
     <!-- Parallax Header -->
-    <%= render 'parallax_header', background_image: 'images/bg-blog.jpg', title: 'Blog' %>
+    <%= render 'parallax_header', background_image: 'images/bg-blog.jpg', title: 'Shop' %>
 
-    <!-- Display Posts -->
-    <%= render 'posts', posts: @posts %>
+    <hr>
+    <!-- Shop Section -->
+    <%= render 'shop_section', products: @products %>
 
     <!-- Footer -->
     <%= render 'footer' %>
+
 </div>
 <div class="snackbars" id="form-output-global"></div>

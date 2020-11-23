@@ -1,0 +1,87 @@
+<section class="section section-lg bg-default text-md-left">
+    <div class="container">
+        <div class="row row-50 justify-content-center">
+        <div class="col-md-10 col-lg-6">
+            <h3 class="font-weight-medium text-center">Billing Address</h3>
+            <form id="payment-form" class="rd-form rd-mailform form-checkout" method="post" action="<%= checkout_url %>">
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            <div class="row row-30">
+                <div class="col-sm-6">
+                <div class="form-wrap">
+                    <input value="test" class="form-input" id="checkout-first-name-1" type="text" name="ba_fname" data-constraints="@Required"/>
+                    <label class="form-label" for="checkout-first-name-1">First Name</label>
+                </div>
+                </div>
+                <div class="col-sm-6">
+                <div class="form-wrap">
+                    <input value="test" class="form-input" id="checkout-last-name-1" type="text" name="ba_lname" data-constraints="@Required"/>
+                    <label class="form-label" for="checkout-last-name-1">Last Name</label>
+                </div>
+                </div>
+                <div class="col-12">
+                <div class="form-wrap">
+                    <input value="test" class="form-input" id="checkout-company-1" type="text" name="ba_company"/ data-constraints="@Required">
+                    <label class="form-label" for="checkout-company-1">Company</label>
+                </div>
+                </div>
+                <div class="col-12">
+                <div class="form-wrap">
+                    <input value="test" class="form-input" id="checkout-address-1" type="text" name="ba_address" data-constraints="@Required"/>
+                    <label class="form-label" for="checkout-address-1">Address</label>
+                </div>
+                </div>
+                <div class="col-12">
+                <div class="form-wrap">
+                    <input value="test" class="form-input" id="checkout-city-1" type="text" name="ba_city" data-constraints="@Required"/>
+                    <label class="form-label" for="checkout-city-1">City/Town</label>
+                </div>
+                </div>
+                <div class="col-sm-6">
+                <div class="form-wrap">
+                    <input value="test" class="form-input" id="checkout-email-1" type="email" name="ba_email" data-constraints="@Email @Required"/>
+                    <label class="form-label" for="checkout-email-1">E-Mail</label>
+                </div>
+                </div>
+                <div class="col-sm-6">
+                <div class="form-wrap">
+                    <input value="test" class="form-input" id="checkout-phone-1" type="text" name="ba_phone" data-constraints="@Numeric"/>
+                    <label class="form-label" for="checkout-phone-1">Phone</label>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div id="cart-toal" class="col-md-10 col-lg-6">
+            <h3 class="font-weight-medium text-center">Cart total</h3>
+            <div class="table-custom-responsive">
+            <table class="table-custom table-custom-primary table-checkout">
+                <tbody>
+                <tr>
+                    <td>Cart Subtotal</td>
+                    <td class="cart-total">$41</td>
+                </tr>
+                <tr>
+                    <td>Shipping</td>
+                    <td>Free</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td class="cart-total">$41</td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+            <div id="payment-box" style="margin-top: 50px;">
+                <div class="form-row">
+                <label for="card-element">
+                    
+                </label>
+                <div id="card-element" class="form-control"></div>
+                <div id="card-errors" role="alert"></div>
+                </div>
+                <a id="purchase-items" class="button button-lg button-primary button-zakaria" href="#">Purchase Items</a>
+            </div>
+        </div>
+        </form>
+        </div>
+    </div>
+</section>

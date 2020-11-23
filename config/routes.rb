@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get 'product', to: 'static_pages#product'
 
+  get 'shop', to: 'static_pages#shop'
   post 'add_to_cart', to: 'static_pages#add_to_cart'
   get 'cart', to: 'static_pages#cart'
   post 'update_quantity', to: 'static_pages#update_quantity'
