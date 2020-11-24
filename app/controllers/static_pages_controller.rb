@@ -81,6 +81,8 @@ class StaticPagesController < ApplicationController
     end
 
     def checkout
+        p params
+
         @cart = Cart.find(cookies[:cart])
 
         products = @cart.products.map do |prod|
@@ -92,36 +94,22 @@ class StaticPagesController < ApplicationController
             }
         end
 
-        billing_address = {
-            fname: params[:ba_fname],
-            lname: params[:ba_lname],
-            company: params[:ba_company],
-            address: params[:ba_address],
-            city: params[:ba_city],
-            email: params[:ba_email],
-            phone: params[:ba_phone],
+        shipping_address = {
+            fname: params[:fname],
+            lname: params[:lname],
+            company: params[:company],
+            address: params[:address],
+            city: params[:city],
+            email: params[:email],
+            phone: params[:phone],
         }
-
-        if !params[:sa_address]
-            shipping_address = billing_address
-        else
-            shipping_address = {
-                fname: params[:sa_fname],
-                lname: params[:sa_lname],
-                company: params[:sa_company],
-                address: params[:sa_address],
-                city: params[:sa_city],
-                email: params[:sa_email],
-                phone: params[:sa_phone],
-            }
-        end
 
         total = 0
         @cart.products.each do |prod|
             total += prod['price'].to_i * prod['quantity'].to_i
         end
 
-        order = Order.new(products: products, billing_address: billing_address, shipping_address: shipping_address, total: total)
+        order = Order.new(products: products, shipping_address: shipping_address, total: total)
         order.save
 
         redirect_to :checkout
