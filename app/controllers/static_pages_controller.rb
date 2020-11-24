@@ -75,8 +75,8 @@ class StaticPagesController < ApplicationController
     end
 
     def checkout_page
+        redirect_to root_url unless cookies[:cart]
         @cart = Cart.find(cookies[:cart])
-        redirect_to root_url unless @cart
         render :checkout
     end
 
