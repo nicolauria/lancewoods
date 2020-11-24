@@ -69,6 +69,8 @@ GEM
     ffi (1.13.1-x64-mingw32)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    heroku-deflater (0.6.3)
+      rack (>= 1.4.5)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.1)
@@ -102,7 +104,6 @@ GEM
     rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
-    rack-zippy (3.0.1)
     rails (6.0.3.4)
       actioncable (= 6.0.3.4)
       actionmailbox (= 6.0.3.4)
@@ -174,10 +175,10 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
+  heroku-deflater
   jbuilder (~> 2.7)
   mongoid (~> 7.0.5)
   puma (~> 4.1)
-  rack-zippy
   rails (~> 6.0.3, >= 6.0.3.4)
   sass-rails (>= 6)
   stripe
