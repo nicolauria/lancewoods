@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
     end
 
     def newsletter
-        MyMailer.send_email(name: params[:name], phone: params[:phone], email: params[:email], message: params[:message]).deliver
+        MyMailer.newsletter(email: params[:email]).deliver
         
         render plain: 'MF000'
     end
@@ -136,6 +136,15 @@ class StaticPagesController < ApplicationController
         @post = Blog.find(params[:id])
         @posts = Blog.all
         render :blog_post
+    end
+
+    def contact
+        render :contact
+    end
+
+    def contact_submit
+        MyMailer.contact_form(fname: params[:fname], lname: params[:lname], email: params[:email], phone: params[:phone], message: params[:message]).deliver
+        render plain: 'MF000'
     end
 end
 

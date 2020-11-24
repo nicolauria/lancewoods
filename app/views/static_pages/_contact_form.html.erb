@@ -1,0 +1,48 @@
+<section class="section section-xl bg-default text-md-left">
+    <div class="container">
+        <div class="title-classic">
+        <h3 class="title-classic-title">Get in touch</h3>
+        <p class="title-classic-subtitle">Feel free to contact Bandico’s agents 24/7 by fax, e-mail or by phone.  <br class="d-none d-lg-block">You can also use our quick contact form to contact them directly.</p>
+        </div>
+        <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="<%= contact_url %>">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <div class="row row-20 row-md-30">
+            <div class="col-lg-8">
+            <div class="row row-20 row-md-30">
+                <div class="col-sm-6">
+                <div class="form-wrap">
+                    <input class="form-input" id="contact-first-name-2" type="text" name="fname" data-constraints="@Required"/>
+                    <label class="form-label" for="contact-first-name-2">First Name</label>
+                </div>
+                </div>
+                <div class="col-sm-6">
+                <div class="form-wrap">
+                    <input class="form-input" id="contact-last-name-2" type="text" name="lname" data-constraints="@Required"/>
+                    <label class="form-label" for="contact-last-name-2">Last Name</label>
+                </div>
+                </div>
+                <div class="col-sm-6">
+                <div class="form-wrap">
+                    <input class="form-input" id="contact-email-2" type="email" name="email" data-constraints="@Email @Required"/>
+                    <label class="form-label" for="contact-email-2">E-mail</label>
+                </div>
+                </div>
+                <div class="col-sm-6">
+                <div class="form-wrap">
+                    <input class="form-input" id="contact-phone-2" type="text" name="phone" data-constraints="@Numeric"/>
+                    <label class="form-label" for="contact-phone-2">Phone</label>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-lg-4">
+            <div class="form-wrap">
+                <label class="form-label" for="contact-message-2">Message</label>
+                <textarea class="form-input textarea-lg" id="contact-message-2" name="message" data-constraints="@Required"></textarea>
+            </div>
+            </div>
+        </div>
+        <button class="button button-lg button-primary button-zakaria" type="submit">Send Message</button>
+        </form>
+    </div>
+</section>

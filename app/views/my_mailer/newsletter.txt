@@ -1,0 +1,3 @@
+Someone signed up for your newsletter:
+
+Email: <%= @email %>

@@ -716,6 +716,8 @@
 				}
 			}
 
+			key = 'AIzaSyDIKuBUJY_EaGRQ5nOjzaAhC8whm5oClUA';
+
 			$.getScript('//maps.google.com/maps/api/js?'+ ( key ? 'key='+ key + '&' : '' ) +'sensor=false&libraries=geometry,places&v=quarterly', function () {
 				var head = document.getElementsByTagName('head')[0],
 					insertBefore = head.insertBefore;

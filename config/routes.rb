@@ -17,4 +17,7 @@ Rails.application.routes.draw do
 
   get 'blog', to: 'static_pages#blog'
   get 'blog_post', to: 'static_pages#blog_post'
+
+  get 'contact', to: 'static_pages#contact'
+  post 'contact', to: 'static_pages#contact_submit'
 end
