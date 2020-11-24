@@ -30,7 +30,7 @@ module Lancewoods
     # the framework and any gems in your application.
 
     # Add Gzip Compression
-    config.middleware.insert_after ActionDispatch::Static, Rack::Deflater
+    config.middleware.swap(ActionDispatch::Static, Rack::Zippy::AssetServer)
 
     # Don't generate system test files.
     config.generators.system_tests = nil

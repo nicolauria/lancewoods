@@ -102,6 +102,7 @@ GEM
     rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
+    rack-zippy (3.0.1)
     rails (6.0.3.4)
       actioncable (= 6.0.3.4)
       actionmailbox (= 6.0.3.4)
@@ -176,6 +177,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   mongoid (~> 7.0.5)
   puma (~> 4.1)
+  rack-zippy
   rails (~> 6.0.3, >= 6.0.3.4)
   sass-rails (>= 6)
   stripe
