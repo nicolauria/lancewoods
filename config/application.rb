@@ -29,6 +29,9 @@ module Lancewoods
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+    # Add Gzip Compression
+    config.middleware.insert_after ActionDispatch::Static, Rack::Deflater
+
     # Don't generate system test files.
     config.generators.system_tests = nil
 
