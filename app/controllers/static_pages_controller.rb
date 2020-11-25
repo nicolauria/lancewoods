@@ -81,8 +81,6 @@ class StaticPagesController < ApplicationController
     end
 
     def checkout
-        p params
-
         @cart = Cart.find(cookies[:cart])
 
         products = @cart.products.map do |prod|
@@ -109,10 +107,22 @@ class StaticPagesController < ApplicationController
             total += prod['price'].to_i * prod['quantity'].to_i
         end
 
-        order = Order.new(products: products, shipping_address: shipping_address, total: total)
-        order.save
+        # Set your secret key. Remember to switch to your live secret key in production.
+        # See your keys here: https://dashboard.stripe.com/account/apikeys
+        Stripe.api_key = ENV['STRIPE_PUBLIC_KEY']
 
-        redirect_to :checkout
+        charge = Stripe::Charge.create({
+            amount: total * 100,
+            currency: 'usd',
+            description: 'Example charge',
+            source: params[:stripeToken],
+        })
+
+        @order = Order.new(products: products, shipping_address: shipping_address, total: total, stripe_token: params[:stripeToken])
+        @order.save
+        @order.stripe_token = nil
+
+        render :purchase_confirmation
     end
 
     def blog

@@ -1,0 +1,23 @@
+<% content_for :title, 'Purchase Confirmation' %>
+
+<%=  render 'preloader' %>
+<div class="page">
+    <!-- Header-->
+    <%= render 'header' %>
+
+    <!-- Parallax Header -->
+    <%= render 'parallax_header', background_image: 'images/bg-blog.jpg', title: 'Purchase Confirmation' %>
+    
+    <section class="section section-xxl bg-gray-4 text-md-left">
+        <div class="container">
+            <div class="row row-50 justify-content-center">
+                <h2>Thank you for your purchase</h2>
+                <%= @order.inspect %>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <%= render 'footer' %>
+</div>
+<div class="snackbars" id="form-output-global"></div>

@@ -5,4 +5,5 @@ class Order
   field :billing_address, type: Hash
   field :shipping_address, type: Hash
   field :total, type: String
+  field :stripe_token, type: String
 end
