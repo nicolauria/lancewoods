@@ -109,7 +109,7 @@ class StaticPagesController < ApplicationController
 
         # Set your secret key. Remember to switch to your live secret key in production.
         # See your keys here: https://dashboard.stripe.com/account/apikeys
-        Stripe.api_key = ENV['STRIPE_PUBLIC_KEY']
+        Stripe.api_key = ENV['STRIPE_SECRET_KEY']
 
         charge = Stripe::Charge.create({
             amount: total * 100,
