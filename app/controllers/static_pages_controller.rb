@@ -114,7 +114,6 @@ class StaticPagesController < ApplicationController
         charge = Stripe::Charge.create({
             amount: total * 100,
             currency: 'usd',
-            description: 'Example charge',
             source: params[:stripeToken],
         })
 
