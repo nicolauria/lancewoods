@@ -1,0 +1,14 @@
+<section>
+    <div>
+        <h2>Thank you for your purchase</h2>
+        <p style="margin-bottom: 30px">Order Id: <%= @id %>
+        <h3>Products</h3>
+        <% @products.each do |product| %>
+            <p style="margin-bottom: 30px"><%= product %></p>
+        <% end %>
+        <h3>Shipping Details</h3>
+        <p style="margin-bottom: 30px"><%= @shipping_address %></p>
+        <h3>Total</h3>
+        <p style="margin-bottom: 30px"><%= @total %></p>
+    </div>
+</section>

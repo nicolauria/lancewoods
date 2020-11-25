@@ -107,8 +107,6 @@ class StaticPagesController < ApplicationController
             total += prod['price'].to_i * prod['quantity'].to_i
         end
 
-        # Set your secret key. Remember to switch to your live secret key in production.
-        # See your keys here: https://dashboard.stripe.com/account/apikeys
         Stripe.api_key = ENV['STRIPE_SECRET_KEY']
 
         charge = Stripe::Charge.create({
@@ -119,6 +117,8 @@ class StaticPagesController < ApplicationController
 
         @order = Order.new(products: products, shipping_address: shipping_address, total: total, stripe_token: params[:stripeToken])
         @order.save
+
+        MyMailer.purchase_confirmation(id: @order._id, email: params[:email], products: products, shipping_address: shipping_address, total: total).deliver
 
         cookies.delete :cart
         render :purchase_confirmation

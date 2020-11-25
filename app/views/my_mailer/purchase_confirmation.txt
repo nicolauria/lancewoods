@@ -1,0 +1,9 @@
+Thank you for your purchase!
+
+Order ID: <%= @order._id %>
+
+Products: <%= @order.products %>
+
+Shipping: <%= @order.shipping_address %>
+
+Total: <%= @order.total %>
