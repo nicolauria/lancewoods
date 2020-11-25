@@ -120,7 +120,7 @@ class StaticPagesController < ApplicationController
         @order = Order.new(products: products, shipping_address: shipping_address, total: total, stripe_token: params[:stripeToken])
         @order.save
 
-        cookies[:cart] = nil
+        cookies.delete :cart
         render :purchase_confirmation
     end
 
