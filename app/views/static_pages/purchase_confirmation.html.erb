@@ -14,7 +14,8 @@
             <p style="margin-bottom: 30px">Order Id: <%= @order._id %>
             <h3>Products</h3>
             <% @order.products.each do |product| %>
-                <p>Name: <%= product.name %></p>
+                <%= product %>
+                <p>Name: <%= product['name'] %></p>
                 <p>Price: <%= product['price'] %></p>
                 <p>quantity: <%= product['quantity'] %></p>
             <% end %>
