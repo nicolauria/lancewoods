@@ -12,15 +12,14 @@
         <div class="container">
             <h2>Thank you for your purchase</h2>
             <p style="margin-bottom: 30px">Order Id: <%= @order._id %>
-            <h3>Products</h3>
+            <h3 style="margin-bottom: 30px">Products</h3>
             <% @order.products.each do |product| %>
-                <%= product %>
-                <p>Name: <%= product['name'] %></p>
-                <p>Price: <%= product['price'] %></p>
-                <p>quantity: <%= product['quantity'] %></p>
+                <p><%= product %></p>
             <% end %>
-            <p>Shipping Address: <%= @order.shipping_address['address'] %></p>
-            <p>Total: <%= @order.total %></p>
+            <h3 style="margin-bottom: 30px">Shipping Details</h3>
+            <p><%= @order.shipping_address %></p>
+            <h3 style="margin-bottom: 30px">Total</h3>
+            <p><%= @order.total %></p>
         </div>
     </section>
 
