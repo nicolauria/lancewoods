@@ -1,0 +1,53 @@
+<% content_for :title, 'Add Event' %>
+
+<%=  render 'static_pages/preloader' %>
+<div class="page">
+    <!-- Header-->
+    <%= render 'static_pages/header' %>
+
+    <!-- Parallax Header -->
+    <%= render 'static_pages/parallax_header', background_image: 'images/bg-blog.jpg', title: 'Add Event' %>
+
+    <section class="section section-xxl bg-default">
+        <div class="container">
+            <div class="row">
+                <form class="rd-form rd-form-text-center d-flex" style="width: 100%" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="<%= add_event_url %>">
+                    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                
+                    <div class="col-sm-6">
+                        <p>Name</p>
+                        <input class="form-input" id="subscribe-form-1-email" type="text" name="name" data-constraints="@Required" value="">
+                        
+                        <p>Description</p>
+                        <input class="form-input" id="description" type="text" name="description" data-constraints="@Required" value="">
+                        
+                        <p>Date</p>
+                        <input class="form-input" id="date" type="text" name="date" data-constraints="@Required" value="">
+                        
+                        <p>Price</p>
+                        <input class="form-input" id="price" type="text" name="price" data-constraints="@Required" value="">
+                    </div>
+
+                    <div class="col-sm-6">
+                        <p>Event URL</p>
+                        <input class="form-input" id="event_url" type="text" name="event_url" data-constraints="@Required" value="">
+
+                        <p>City</p>
+                        <input class="form-input" id="city" type="text" name="city" data-constraints="@Required" value="">
+
+                        <p>Location</p>
+                        <input class="form-input" id="location" type="text" name="location" data-constraints="@Required" value="">
+                        
+                        
+                        <button class="button button-gray-800 button-zakaria" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <a style="display: block; margin-top: 50px" href="<%= dashboard_url %>">Back to Dashboard</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <%= render 'static_pages/footer' %>
+</div>
+<div class="snackbars" id="form-output-global"></div>

@@ -20,4 +20,12 @@ Rails.application.routes.draw do
 
   get 'contact', to: 'static_pages#contact'
   post 'contact', to: 'static_pages#contact_submit'
+
+  get 'dashboard', to: 'dashboard#index'
+
+  get 'edit_event', to: 'dashboard#edit_event_form'
+  post 'edit_event', to: 'dashboard#edit_event'
+  get 'add_event', to: 'dashboard#add_event_form'
+  post 'add_event', to: 'dashboard#add_event'
+  post 'delete_event', to: 'dashboard#delete_event'
 end
