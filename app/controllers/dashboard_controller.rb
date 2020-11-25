@@ -14,7 +14,6 @@ class DashboardController < ApplicationController
         event = Event.find(params[:id])
         event.update(event_params)
         
-        # render plain: 'MF000'
         redirect_to :dashboard
     end
 
@@ -34,9 +33,40 @@ class DashboardController < ApplicationController
         redirect_to :dashboard
     end
 
+    def edit_product_form
+        @product = Product.find(params[:id])
+        render :edit_product_form
+    end
+
+    def edit_product
+        product = Product.find(params[:id])
+        product.update(product_params)
+
+        redirect_to :dashboard
+    end
+
+    def delete_product
+        product = Product.find(params[:id])
+        product.delete
+        redirect_to :dashboard
+    end
+
+    def add_product_form
+        render :add_product_form
+    end
+
+    def add_product
+        Product.create(product_params)
+        redirect_to :dashboard
+    end
+
     private
 
     def event_params
         params.permit(:name, :description, :date, :price, :event_url, :city, :location)
+    end
+
+    def product_params
+        params.permit(:name, :price, :description, :image1, :image2, :image3, :thumbnail, :popular, :category)
     end
 end

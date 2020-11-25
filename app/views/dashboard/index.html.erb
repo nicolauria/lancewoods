@@ -20,8 +20,9 @@
             </div>
             <div class="col-lg-6">
                 <h2>Products</h2>
+                <a href="<%= add_product_url %>" class="button button-lg button-primary button-zakaria mb-5">Add Product</a>
                 <% @products.each do |product| %>
-                    <p><a href="#"><%= product.name %></a></p>
+                    <p><a href="<%= edit_product_url(id: product._id) %>"><%= product.name %></a></p>
                 <% end %>
             </div>
         </div>

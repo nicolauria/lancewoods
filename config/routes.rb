@@ -25,7 +25,13 @@ Rails.application.routes.draw do
 
   get 'edit_event', to: 'dashboard#edit_event_form'
   post 'edit_event', to: 'dashboard#edit_event'
+  post 'delete_event', to: 'dashboard#delete_event'
   get 'add_event', to: 'dashboard#add_event_form'
   post 'add_event', to: 'dashboard#add_event'
-  post 'delete_event', to: 'dashboard#delete_event'
+
+  get 'edit_product', to: 'dashboard#edit_product_form'
+  post 'edit_product', to: 'dashboard#edit_product'
+  post 'delete_product', to: 'dashboard#delete_product'
+  get 'add_product', to: 'dashboard#add_product_form'
+  post 'add_product', to: 'dashboard#add_product'
 end
