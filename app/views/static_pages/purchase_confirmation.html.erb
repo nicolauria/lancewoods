@@ -12,14 +12,14 @@
         <div class="container">
             <h2>Thank you for your purchase</h2>
             <p style="margin-bottom: 30px">Order Id: <%= @order._id %>
-            <h3 style="margin-bottom: 30px">Products</h3>
+            <h3>Products</h3>
             <% @order.products.each do |product| %>
-                <p><%= product %></p>
+                <p style="margin-bottom: 30px"><%= product %></p>
             <% end %>
-            <h3 style="margin-bottom: 30px">Shipping Details</h3>
-            <p><%= @order.shipping_address %></p>
-            <h3 style="margin-bottom: 30px">Total</h3>
-            <p><%= @order.total %></p>
+            <h3>Shipping Details</h3>
+            <p style="margin-bottom: 30px"><%= @order.shipping_address %></p>
+            <h3>Total</h3>
+            <p style="margin-bottom: 30px"><%= @order.total %></p>
         </div>
     </section>
 
