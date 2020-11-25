@@ -14,10 +14,10 @@
                 <h2>Thank you for your purchase</h2>
                 <p>Order Id: <%= @order._id %>
                 <h3>Products</h3>
-                <%= @order.products.each do |product| %>
-                    <p>Name: <%= product.name %></p>
-                    <p>Price: <%= product.price %></p>
-                    <p>quantity: <%= product.quantity %></p>
+                <% @order.products.each do |product| %>
+                    <p>Name: <%= product['name'] %></p>
+                    <p>Price: <%= product['price'] %></p>
+                    <p>quantity: <%= product['quantity'] %></p>
                 <% end %>
                 <h3>Shipping Address</h3>
                 <p><%= @order.shipping_address %></p>
