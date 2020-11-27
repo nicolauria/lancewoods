@@ -22,7 +22,8 @@ class MyMailer < ApplicationMailer
         @products = options[:products]
         @shipping_address = options[:shipping_address]
         @total = options[:total]
+        recipients = options[:email] + ",admin@ohm.solutions"
         
-        mail(:to=>options[:email], :subject=>"Lance Woods Comedy Purchase Confirmation")
+        mail(:to=>recipients, :subject=>"Lance Woods Comedy Purchase Confirmation")
     end
 end
