@@ -34,4 +34,8 @@ Rails.application.routes.draw do
   post 'delete_product', to: 'dashboard#delete_product'
   get 'add_product', to: 'dashboard#add_product_form'
   post 'add_product', to: 'dashboard#add_product'
+
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  post 'logout', to: 'sessions#destroy'
 end

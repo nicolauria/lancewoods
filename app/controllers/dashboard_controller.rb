@@ -1,4 +1,6 @@
 class DashboardController < ApplicationController
+    before_action :require_signed_in!
+    
     def index
         @events = Event.all
         @products = Product.all

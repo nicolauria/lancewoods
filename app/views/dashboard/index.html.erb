@@ -8,6 +8,11 @@
     <!-- Parallax Header -->
     <%= render 'static_pages/parallax_header', background_image: 'images/bg-blog.jpg', title: 'Dashboard' %>
 
+    <form method="post" action="<%= logout_url %>" style="margin-top: 30px">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <input type="submit" value="Sign Out">
+    </form>
+
     <section class="section section-xxl bg-default">
     <div class="container">
         <div class="row row-30">
