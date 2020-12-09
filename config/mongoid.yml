@@ -3,7 +3,7 @@ production:
     default:
       uri: <%= "#{ENV['MONGODB_URL']}" %>
       options:
-        server_selection_timeout: 5
+        # server_selection_timeout: 5
         raise_not_found_error: false
 
 development:
